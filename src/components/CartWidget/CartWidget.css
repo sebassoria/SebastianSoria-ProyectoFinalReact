@@ -1,0 +1,15 @@
+
+.cart{
+    padding:1.5em 9em 1.5em 0;
+}
+.cart-img{
+    text-decoration: none;
+    width: 1.7em;
+    padding-bottom: .6em;
+    
+}
+.cart span{
+    color: #ffffff;
+    padding: 0 .2em 0 .2em;
+    font-size: 1.5em;
+}
