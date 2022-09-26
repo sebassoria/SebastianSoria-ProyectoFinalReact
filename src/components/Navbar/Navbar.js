@@ -13,7 +13,7 @@ function Navbar() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <button type="button" className="btn btn-dark">Inicio</button>
+            <button type="button" className="btn btn-dark">Acerca</button>
             <button type="button" className="btn btn-dark">Productos</button>
             <button type="button" className="btn btn-dark">Contacto</button>
           </div>    
