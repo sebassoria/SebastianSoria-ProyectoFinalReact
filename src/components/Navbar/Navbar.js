@@ -1,6 +1,7 @@
 
 import './Navbar.css';
 import CartWidget from '../CartWidget/CartWidjet';
+import {Link, NavLink} from 'react-router-dom'
 
 
 function Navbar() {
@@ -8,14 +9,17 @@ function Navbar() {
         
       <nav className="navbar navbar-expand-lg bg-dark">
         <div className="container-fluid">
-          <a className="navbar-brand logo link-light" href="../../public/index.html">Dos Naranjas</a>
+          <Link to='/' className="navbar-brand logo link-light">Dos Naranjas</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <button type="button" className="btn btn-dark">Acerca</button>
-            <button type="button" className="btn btn-dark">Productos</button>
-            <button type="button" className="btn btn-dark">Contacto</button>
+            <button type="button" className="btn btn-dark btn-nav">Acerca</button>
+            {/* <NavLink to='/' className={({ isActive}) => isActive ? 'btn btn-dark btn-active' : 'btn btn-dark btn-nav'}>Productos</NavLink> */}
+            <NavLink to='/category/tinto' className={({ isActive}) => isActive ? 'btn btn-dark btn-active' : 'btn btn-dark btn-nav'}>Tinto</NavLink>
+            <NavLink to='/category/blanco' className={({ isActive}) => isActive ? 'btn btn-dark btn-active' : 'btn btn-dark btn-nav'}>Blanco</NavLink>
+            <NavLink to='/category/rosado' className={({ isActive}) => isActive ? 'btn btn-dark btn-active' : 'btn btn-dark btn-nav'}>Rosado</NavLink>
+            <button type="button" className="btn btn-dark btn-nav">Contacto</button>
           </div>    
           <div>
             <CartWidget />  
