@@ -13,7 +13,7 @@ function ItemListContainer({greeting}) {
   const {categoryId}=useParams()
 
     useEffect(()=>{
-
+      setLoading(true)
       const asyncFunction = categoryId ? getCategory : getProducts
 
       asyncFunction(categoryId).then(response=>{
@@ -29,7 +29,7 @@ function ItemListContainer({greeting}) {
   } else{
     return ( 
        <div className='items-container'>
-         <h1>
+         <h1 className='greeting'>
             <hr/>{greeting}<hr/>
         </h1>
 

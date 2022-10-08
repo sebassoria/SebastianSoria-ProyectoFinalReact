@@ -9,24 +9,27 @@ function ItemDetail({item}) {
 
 
     return (
-        
-        <div className='cont-detail'>
-            
-            <div className='cont-detail__img'>
-                <img src={item.img} alt='{item.name}' className='img-detail'></img>
-            </div>
-            <div className='cont-detail__text'>
-                <h2>{item.name}</h2>
-                <h3>Varietal: {item.varietal}</h3>
-                <span className='item-price'>$ {item.price}</span>
-                <p>Stock disponible: <b>{item.stock}</b></p>
-                <h4 className='description'>Descripción:</h4>
-                <p className='item-description'>{item.description}</p>
-                <hr/>
-                <ItemCount stock={Number(item.stock)} onAdd={handleOnAdd}/>
-            </div>
+      <div className="cont-detail">
+        <div className="cont-detail__img">
+          <img src={item.img} alt="{item.name}" className="img-detail"></img>
         </div>
-    )
+        <div className="cont-detail__text">
+          <h2>{item.name}</h2>
+          <h3>Varietal: {item.varietal}</h3>
+          <span className="item-price">$ {item.price}</span>
+          <p>
+            Stock disponible: <b>{item.stock}</b>
+          </p>
+          <h4 className="description">Descripción:</h4>
+          <p className="item-description">{item.description}</p>
+          <hr />
+          <div className='counter-cont'>
+            <p>Cantidad</p>
+            <ItemCount stock={Number(item.stock)} onAdd={handleOnAdd} />
+          </div>
+        </div>
+      </div>
+    );
 }
 
 export default ItemDetail

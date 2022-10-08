@@ -1,9 +1,9 @@
 
 
 
-h1{
+.greeting{
     text-align: center;
-    padding: 1.5em;
+    padding: .5em;
     color: #8a1538;
     font-family: 'Playfair Display', serif;
 }

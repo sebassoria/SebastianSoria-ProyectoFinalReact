@@ -7,6 +7,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 
 
+
 function App() {
 
   return (
@@ -17,7 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={<ItemListContainer greeting={'Nuestros productos'}/> }/>
           <Route path='/detail/:detailId' element={<ItemDetailContainer />}/> 
-          <Route path='/category/:categoryId' element={<ItemListContainer />} />
+          <Route path='/category/:categoryId' element={<ItemListContainer  greeting={'Nuestros productos'}/>} />
         </Routes>
       </BrowserRouter>
      </div>
