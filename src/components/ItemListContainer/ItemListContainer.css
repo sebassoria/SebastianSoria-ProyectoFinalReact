@@ -1,9 +1,15 @@
-
-
+/* .items-container{
+    height: 100vh;
+} */
+.items-container hr{
+    padding: 0;
+    margin: 0.2em;
+}
 
 .greeting{
     text-align: center;
-    padding: .5em;
+    padding: 0;
+    margin: 1em;
     color: #8a1538;
     font-family: 'Playfair Display', serif;
 }

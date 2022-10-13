@@ -2,7 +2,7 @@
     width: 9em !important;
     margin: 0 auto;
     transform: scale(0.9);
-    transition: all .5s;
+    transition: all .4s;
     position: relative;
 }
 
@@ -14,16 +14,19 @@
     box-shadow: 1px 1px 10px #000000;
     margin-bottom: 2em;
 }
-
+ .btn-detail{
+    transition: .3s ease-out;
+} 
 .btn-detail:hover {
     background-color: #8a1538 !important;
-
+    cursor: pointer;
+    transform: scaleX(1.1);
 }
 
 .card-title {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: #8a1538;
-    margin-top: 0;
+    margin-top: .5em;
     max-height: 66px;
     min-height: 4em;
 }
@@ -35,6 +38,7 @@
 
 .card-body {
     padding-top: 0 !important;
+    /* background-color: #dbdbdb !important; */
 }
 
 .card-cont {

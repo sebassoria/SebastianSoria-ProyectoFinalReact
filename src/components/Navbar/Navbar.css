@@ -1,18 +1,25 @@
-
-/* .navbar{
-    box-shadow: 1px 1px 10px #8a1538;
-} */
+.hamburg{
+    color: #ffffff !important;
+}
 
 .logo{
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding:1.5em 0 1.5em 3em;
+    padding:1.2em 0 1.2em 3em;
     font-size: 1.5em !important;
+}
+.btn-nav{
+    transition: .3s ease; 
 }
 .btn-nav:hover{
     background-color: #8a1538 !important;
+    cursor: pointer;
+    border-radius: 50% 10%;
 }
+
 .btn-active{
     background-color: #8a1538 !important;
+    transform: scale(.85) !important;
+    border-radius: 50% 10% !important;
 }
 .cart-cont{
     text-align: center;

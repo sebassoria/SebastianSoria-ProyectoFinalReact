@@ -1,0 +1,22 @@
+
+.cont-finish{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 6em;
+    margin-bottom: 1.5em;
+}
+
+.btn-finish{
+    width: 9em;
+    background-color: #8a1538 !important;
+}
+.btn-finish:hover{
+    background-color: #212529 !important;
+}
+.btn-keep{
+    width: 12em;
+    background-color: #8a1538 !important;
+}
+.btn-keep:hover{
+    background-color: #212529 !important;
+}

@@ -6,7 +6,7 @@ import Loader from '../Loader/Loader'
 import {useParams} from 'react-router-dom'
 
 function ItemDetailContainer() {
-const [item, setItem]=useState('')
+const [item, setItem]=useState()
 const [loading, setLoading]=useState(true)
 
 const {detailId}=useParams()
@@ -27,7 +27,7 @@ if(loading){
 
 return (
 
-    <ItemDetail item={item}/>
+    <ItemDetail {...item} />
 )
 
 }

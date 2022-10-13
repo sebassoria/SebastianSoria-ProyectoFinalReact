@@ -1,7 +1,7 @@
 .cont-counter{
     display: flex;
     justify-content: space-evenly;
-    /* margin-top: 5em; */
+    margin-top: 6em;
     margin-bottom: 1.5em;
 }
 .counter{
@@ -17,7 +17,7 @@
     height: 2.3em;
 }
 .num-count{
-    font-size: 1.6em;
+    font-size: 1.7em;
     color: #8a1538;
     margin: auto;
 }
