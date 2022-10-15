@@ -18,7 +18,6 @@ useEffect(()=>{
     }).finally(()=>{setLoading(false)})
 },[detailId])
 
-console.log(item)
 if(loading){
     return (
         <Loader />

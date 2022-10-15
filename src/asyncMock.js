@@ -140,6 +140,16 @@ const products = [
         description:'Vino Blanchard & Lurton Grand Vin Corte X 750cc',
         category:'blanco',
     },
+    {
+        id: '15',
+        name:'Vino Chacra Nacha Pinot Noir Rosé 750ml.',
+        img: '/img/Nacha.webp',
+        stock:6,
+        price:5999,
+        varietal:'Pinot noir',
+        description:'Vino Chacra Nacha Pinot Noir Rosé 750ml. Bodega Chacra',
+        category:'rosado',
+    },
 ]
 
 const getProducts = ()=>{
@@ -165,7 +175,7 @@ export const getCategory = (categoryId)=>{
     return new Promise((resolve)=>{
         setTimeout(()=>{
            resolve(products.filter(categ=>categ.category===categoryId))
-           console.log(categoryId)
+     
         },2000)
 })
 }

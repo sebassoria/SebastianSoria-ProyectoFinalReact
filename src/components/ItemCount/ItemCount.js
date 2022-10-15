@@ -17,7 +17,7 @@ const [count, setCount]=useState(1)
             setCount(count+1)
         }
     }
-
+  
     return(
         
        <div className='cont-counter'>
@@ -27,8 +27,9 @@ const [count, setCount]=useState(1)
             <button onClick={add} className="btn btn-dark">+</button>
         </div>
         <div className='add-cart'>
-            <button onClick={onAdd}  type="button" className="btn btn-dark">agregar al carrito</button>
+            <button onClick={()=>onAdd(count)}  type="button" className="btn btn-dark">agregar al carrito</button>
         </div>
+
        </div>
 
     )
