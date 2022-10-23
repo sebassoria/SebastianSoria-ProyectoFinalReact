@@ -6,6 +6,8 @@
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     padding:1.2em 0 1.2em 3em;
     font-size: 1.5em !important;
+    color: #8a1538 !important;
+    text-shadow:1px 1px 5px #ffffff !important;
 }
 .btn-nav{
     transition: .3s ease; 

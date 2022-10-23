@@ -15,7 +15,7 @@ export const CartContext=createContext({cartList: [], totalCount:0})
         if(!isInCart(productToAdd.id)) {
             setCartList([...cartList, productToAdd])
         } else {
-        console.log('is in the cart')
+        console.log('producto ya en carrito')
         }  
         //implementa la funcionalidad para agregar un producto al carrito
     }
@@ -45,6 +45,7 @@ export const CartContext=createContext({cartList: [], totalCount:0})
         return accu
     }
 
+  
     console.log(cartList)
     return(
         <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem, totalCount}}>

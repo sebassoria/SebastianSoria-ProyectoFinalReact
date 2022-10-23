@@ -9,8 +9,9 @@
 .greeting{
     text-align: center;
     padding: 0;
-    margin: 1em;
+    margin: .7em auto;
     color: #8a1538;
     font-family: 'Playfair Display', serif;
+    max-width: 1180px;
 }
 

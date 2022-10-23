@@ -2,8 +2,8 @@
 .cont-finish{
     display: flex;
     justify-content: space-evenly;
-    margin-top: 6em;
-    margin-bottom: 1.5em;
+   
+    margin-bottom: 2em;
 }
 
 .btn-finish{

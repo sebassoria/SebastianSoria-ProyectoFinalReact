@@ -4,7 +4,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: .3em;
-    margin: 3.5em auto;
+    margin: 3em auto;
     background-color: #ffffff;
     border-radius: .4em;
     box-shadow: 1px 1px 10px #0000006c;
@@ -70,4 +70,8 @@
 }
 .btn-finish:hover{
     background-color: #212529 !important;
+}
+.btn-back:hover{
+    background-color: #212529 !important;
+    color: #ffffff !important;
 }

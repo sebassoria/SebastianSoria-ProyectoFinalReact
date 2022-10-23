@@ -9,6 +9,7 @@ import CartContextProvider from './context/CartContext'
 
 
 
+
 function App() {
 
   return (
@@ -20,7 +21,7 @@ function App() {
          <Routes>
            <Route path='/' element={<ItemListContainer greeting={'Nuestros productos'}/> }/>
            <Route path='/detail/:detailId' element={<ItemDetailContainer />}/> 
-           <Route path='/category/:categoryId' element={<ItemListContainer  greeting={'Nuestros productos'}/>} />
+           <Route path='/category/:categoryId' element={<ItemListContainer greeting={'Vinos por categoría'}/>} />
            <Route path='*' element={<h1>404 NOT FOUND</h1>}/>
            <Route path='/cart' element={<Cart />}/>
          </Routes>

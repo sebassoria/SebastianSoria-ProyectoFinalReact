@@ -3,10 +3,13 @@ import ItemCount from '../ItemCount/ItemCount'
 import {useContext, useState} from 'react'
 import ReturnFinish from '../ReturnFinish/ReturnFinish';
 import {CartContext} from '../../context/CartContext'
-import {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+
+
 
 
 function ItemDetail({id,img, name, varietal, stock, description, price}) {
+  const navigate=useNavigate()
 
     const{addToCart}=useContext(CartContext)
 
@@ -31,6 +34,7 @@ function ItemDetail({id,img, name, varietal, stock, description, price}) {
           <img src={img} alt={name} className="img-detail"></img>
         </div>
         <div className="cont-detail__text">
+          
           <h2>{name}</h2>
           <h3>Varietal: {varietal}</h3>
           <span className="item-price">$ {price}</span>
@@ -40,13 +44,15 @@ function ItemDetail({id,img, name, varietal, stock, description, price}) {
           <h4 className="description">Descripción:</h4>
           <p className="item-description">{description}</p>
           <hr />
-          <div className='counter-cont'>
-            {
-            finish 
-              ? <ReturnFinish />
-              :<ItemCount stock={Number(stock)} onAdd={handleOnAdd} />
-              }
-            
+          <div className="counter-cont">
+            {finish ? (
+              <ReturnFinish />
+            ) : (
+              <ItemCount stock={Number(stock)} onAdd={handleOnAdd} />
+            )}
+          </div>
+          <div className='text-center'>
+            <button className='btn btn-back' onClick={() => navigate(-1)}>Volver</button>
           </div>
         </div>
       </div>

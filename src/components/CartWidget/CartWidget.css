@@ -1,5 +1,5 @@
 
-.cart{
+.cart-widget{
     padding:.9em 8em .9em 1em;
 }
 .cart-img{
@@ -7,9 +7,13 @@
     width: 1.7em;
     padding-bottom: .7em;
 }
-.cart span{
-    color: #ffffff;
+.cart-widget span{
+    color: #eeeee5;
     padding: 0 .2em 0 .2em;
     font-size: 1.6em;
+    text-decoration: none;
+}
 
+.cart-widget a{
+    text-decoration: none;
 }

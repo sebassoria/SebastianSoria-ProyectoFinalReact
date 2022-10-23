@@ -1,5 +1,5 @@
 .img-product {
-    width: 9em !important;
+    width: 8.5em !important;
     margin: 0 auto;
     transform: scale(0.9);
     transition: all .4s;
@@ -11,8 +11,13 @@
 }
 
 .card {
-    box-shadow: 1px 1px 10px #000000;
+    
     margin-bottom: 2em;
+    text-align: center;
+    width: 16.5rem;
+}
+.card:hover{
+    box-shadow: 1px 1px 15px #00000034;
 }
  .btn-detail{
     transition: .3s ease-out;
@@ -41,7 +46,4 @@
     /* background-color: #dbdbdb !important; */
 }
 
-.card-cont {
-    text-align: center;
-    width: 17.5rem;
-}
+
