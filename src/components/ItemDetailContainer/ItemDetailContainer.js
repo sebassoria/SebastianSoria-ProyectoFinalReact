@@ -1,6 +1,5 @@
 import './ItemDetailContainer.css'
 import ItemDetail from '../ItemDetail/ItemDetail'
-// import {getItem} from '../../asyncMock'
 import {useState, useEffect} from 'react'
 import Loader from '../Loader/Loader'
 import {useParams} from 'react-router-dom'
@@ -23,9 +22,6 @@ useEffect(()=>{
         const productAdapted={id:res.id, ...data}
         setItem(productAdapted)
     })
-    // getItem(detailId).then(res=>{
-    //     setItem(res)
-      
     .finally(()=>{setLoading(false)})
 },[detailId])
 

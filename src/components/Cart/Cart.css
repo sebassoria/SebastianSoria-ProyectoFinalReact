@@ -12,8 +12,7 @@
 .bodycart-container{
     height: 100vh;
 }
-.cart-container{
-    
+.cart-container{ 
     width: 80%;
     padding: 1.5em;
     margin: 3em auto;
@@ -23,10 +22,10 @@
 }
 .cart-title{
     text-align: center;
+    color: #8a1538;
 }
 
 .head-cart {
-    /* background-color: aquamarine; */
     margin: 3em auto 0em auto!important;
     border-bottom: 3px solid #8a1538;
     width: 90% !important;
@@ -34,14 +33,25 @@
 }
 
 .body-cart{
-    /* background-color: aqua; */
-    margin:0 auto 2em auto!important;
-    border-bottom: 3px solid #8a1538;
-    padding-top: 3em;
-    padding-bottom: 3em;
+    margin:0 auto!important;
+    border-bottom: 1.5px solid #8a1538;
+    padding: 2.5em 0;
     width: 90% !important;
 }
 .footer-cart{
-    margin: auto !important;
+    margin: 2em auto !important;
+    width: 90% !important;
 }
-
+.material-symbols-outlined{
+    cursor: pointer;
+}
+.total-price{
+    font-weight: 700
+}
+.btn-light{
+    box-shadow: .5px .5px 8px ;
+}
+.footer-cart .btn-light:hover{
+    background-color: #8a1538 !important;
+    color: #ffffff !important;
+}

@@ -1,5 +1,6 @@
 .spinner{
-    padding: 17em;
+    padding: 10em;
+    height: 100vh;
 }
 
 .loader {

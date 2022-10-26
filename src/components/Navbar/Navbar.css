@@ -2,12 +2,13 @@
     color: #ffffff !important;
 }
 
-.logo{
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+.logo img{
+    /* font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     padding:1.2em 0 1.2em 3em;
     font-size: 1.5em !important;
     color: #8a1538 !important;
-    text-shadow:1px 1px 5px #ffffff !important;
+    text-shadow:1px 1px 5px #ffffff !important; */
+    width: 190px;
 }
 .btn-nav{
     transition: .3s ease; 
@@ -25,4 +26,10 @@
 }
 .cart-cont{
     text-align: center;
+}
+.navbar-toggler-icon{
+    color: #ffffff !important;
+}
+.navbar-toggler{
+    color: #ffffff !important;
 }

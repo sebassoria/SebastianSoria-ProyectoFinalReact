@@ -9,7 +9,7 @@ import './Cart.css'
 
 function Cart(id){
     const navig=useNavigate()
-    const {removeList, cartList, totalCount, deleteItem}=useContext(CartContext)
+    const {removeList, cartList, totalCount, deleteItem, totalPrice}=useContext(CartContext)
     
     console.log(...cartList)
 
@@ -28,66 +28,63 @@ function Cart(id){
      }
      else{
         
-        return(
-            
-            <div className='bodycart-container'>
-                
-                <div className='cart-container '>
-                    <h1 className='cart-title'>Carrito</h1>
-                    <div className='row head-cart'>
-                        <div className='col-6'>
-                            <span>PRODUCTO</span>
-                        </div>
-                        <div className='col-2'>
-                            <span>PRECIO</span>
-                        </div>
-                        <div className='col-2'>
-                            <span>CANTIDAD</span>
-                        </div>
-                        <div className='col-2'>
-                            <span>SUBTOTAL</span>
-                        </div>
-                    </div>
-                    
-                    <div className='row body-cart justify-content-center'>
-                        <div className='col-1'>
-                            <span class="material-symbols-outlined" onClick={deleteItem}>
-                                delete
-                            </span>
-                        </div>
-                        <div className='col-5'>
-                            <span>Nombre producto</span>
-                        </div>
-                        <div className='col-2'>
-                            <span>$0000</span>
-                        </div>
-                        <div className='col-2'>
-                            <span>count</span>
-                        </div>
-                        <div className='col-2'>
-                            <span>$subtotal</span>
-                        </div>
-                    </div>
-                    
-                    <div className='row footer-cart justify-content-center'>
-                        
-                        <div className='col-5'>
-                            <button onClick={removeList} className='btn btn-dark'>vaciar carrito</button>
-                        </div>
-                        <div className='col-2'>
-                            <span></span>
-                        </div>
-                        <div className='col-2'>
-                            <span>{totalCount}</span>
-                        </div>
-                        <div className='col-2'>
-                            <span>$total</span>
-                        </div>
-                    </div>
-                
+        return (
+          <div className="bodycart-container">
+            <div className="cart-container ">
+              <h1 className="cart-title">MI CARRITO</h1>
+              <div className="row head-cart">
+                <div className="col-6">
+                  <span>PRODUCTO</span>
                 </div>
+                <div className="col-2 text-center">
+                  <span>PRECIO</span>
+                </div>
+                <div className="col-2 text-center">
+                  <span>CANTIDAD</span>
+                </div>
+                <div className="col-2 text-center">
+                  <span>SUBTOTAL</span>
+                </div>
+              </div>
+
+              {cartList.map((prod) => (
+                <div className="row body-cart ">
+                  <div className="col-1">
+                    <span className="material-symbols-outlined" onClick={()=>deleteItem(prod.id)}>
+                      delete
+                    </span>
+                  </div>
+                  <div className="col-5">
+                    <span>{prod.name}</span>
+                  </div>
+                  <div className="col-2  text-center">
+                    <span>${prod.price}</span>
+                  </div>
+                  <div className="col-2  text-center">
+                    <span>{prod.count}</span>
+                  </div>
+                  <div className="col-2  text-center">
+                    {prod.price*prod.count}
+                  </div>
+                </div>
+              ))}
+
+              <div className="row footer-cart ">
+                <div className="col-8">
+                  <button onClick={removeList} className="btn btn-light">
+                    vaciar carrito
+                  </button>
+                </div>
+                <div className="col-2 text-center">
+                  <span className='total-price'>Cantidad total: {totalCount}</span>
+                </div>
+                <div className="col-2 text-center">
+                  <span className='total-price'>Total: ${totalPrice}</span>
+                </div>
+              </div>
             </div>
-        )
+          </div>
+        );
     }
 }
 
