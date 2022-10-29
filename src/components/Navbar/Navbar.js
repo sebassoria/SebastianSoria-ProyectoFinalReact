@@ -19,11 +19,14 @@ function Navbar() {
             <NavLink to='/category/tinto' className={({ isActive}) => isActive ? 'btn btn-dark btn-active' : 'btn btn-dark btn-nav'}>Tinto</NavLink>
             <NavLink to='/category/blanco' className={({ isActive}) => isActive ? 'btn btn-dark btn-active' : 'btn btn-dark btn-nav'}>Blanco</NavLink>
             <NavLink to='/category/rosado' className={({ isActive}) => isActive ? 'btn btn-dark btn-active' : 'btn btn-dark btn-nav'}>Rosado</NavLink>
-            <button type="button" className="btn btn-dark btn-nav">Contacto</button>
+            {/* <button type="button" className="btn btn-dark btn-nav">Contacto</button> */}
           </div>    
           <div className='cart-cont'>
             <CartWidget />  
           </div> 
+          {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button> */}
         </div>
       
       </nav>

@@ -21,10 +21,9 @@ function ItemListContainer({greeting}) {
       : collection(db,'products')
 
       getDocs(collectionRef).then(response=>{
-        console.log(response)
+        
         const productsAdapted=response.docs.map(doc=>{
           const data=doc.data()
-          console.log(data)
 
           return{id: doc.id, ...data}
         })

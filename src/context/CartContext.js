@@ -31,7 +31,7 @@ export const CartContext=createContext({cartList: [], totalCount:0, totalPrice:0
 
     const removeList = () => {	
         setCartList([])
-        console.log('Carrito vaciado')
+        
         //implementa la funcionalidad para dejar el carrito vacío
     }
 
@@ -60,7 +60,7 @@ export const CartContext=createContext({cartList: [], totalCount:0, totalPrice:0
         return accu
      }
   
-    console.log(cartList)
+    
     return(
         <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem, totalCount, totalPrice}}>
             {children}

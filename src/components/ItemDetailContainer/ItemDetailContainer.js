@@ -17,7 +17,7 @@ useEffect(()=>{
     const docRef=doc(db,'products', detailId)    
 
     getDoc(docRef).then(res=>{
-        console.log(res)
+      
         const data=res.data()
         const productAdapted={id:res.id, ...data}
         setItem(productAdapted)
