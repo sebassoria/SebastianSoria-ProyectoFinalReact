@@ -3,7 +3,9 @@ import {useState} from 'react'
 
 
 
+
 function ItemCount({stock, onAdd}) {
+
 const [count, setCount]=useState(1)
 
     const subtract =()=> {
@@ -27,7 +29,7 @@ const [count, setCount]=useState(1)
             <button onClick={add} className="btn btn-dark">+</button>
         </div>
         <div className='add-cart'>
-            <button onClick={()=>onAdd(count)}  type="button" className="btn btn-dark">agregar al carrito</button>
+            <button onClick={()=>onAdd(count)} type="button" className="btn btn-dark">agregar al carrito</button>
         </div>
 
        </div>

@@ -25,6 +25,7 @@ function ItemDetail({id,img, name, varietal, stock, description, price}) {
     setFinish(true)
     
     addToCart(productToAdd)
+   
   }
  
   
@@ -55,6 +56,7 @@ function ItemDetail({id,img, name, varietal, stock, description, price}) {
             <button className='btn btn-back' onClick={() => navigate(-1)}>Volver</button>
           </div>
         </div>
+        
       </div>
     );
 }

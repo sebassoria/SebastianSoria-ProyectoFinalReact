@@ -1,4 +1,6 @@
 import { useState, createContext, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const CartContext=createContext({cartList: [], totalCount:0, totalPrice:0})
 
@@ -20,8 +22,33 @@ export const CartContext=createContext({cartList: [], totalCount:0, totalPrice:0
     const addToCart = (productToAdd) => {  
         if(!isInCart(productToAdd.id)) {
             setCartList([...cartList, productToAdd])
+            const notifyAdded = () => {
+                toast.success('🦄 Producto agregado al carrito!', {
+                    position: "bottom-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
+            };
+            notifyAdded()
         } else {
-        console.log('producto ya en carrito')
+            const notifyNoAdded = () => {
+                toast.error('No se agrega, este producto ya estaba en su carrito!', {
+                    position: "bottom-center",
+                    autoClose: 2500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    });
+            };
+            notifyNoAdded()
         }  
         //implementa la funcionalidad para agregar un producto al carrito
     }
@@ -30,8 +57,7 @@ export const CartContext=createContext({cartList: [], totalCount:0, totalPrice:0
     }
 
     const removeList = () => {	
-        setCartList([])
-        
+        setCartList([]) 
         //implementa la funcionalidad para dejar el carrito vacío
     }
 
@@ -64,6 +90,7 @@ export const CartContext=createContext({cartList: [], totalCount:0, totalPrice:0
     return(
         <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem, totalCount, totalPrice}}>
             {children}
+            <ToastContainer />
         </CartContext.Provider>
        
     )
