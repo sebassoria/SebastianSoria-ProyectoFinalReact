@@ -23,7 +23,7 @@ export const CartContext=createContext({cartList: [], totalCount:0, totalPrice:0
         if(!isInCart(productToAdd.id)) {
             setCartList([...cartList, productToAdd])
             const notifyAdded = () => {
-                toast.success('🦄 Producto agregado al carrito!', {
+                toast.success('Producto agregado al carrito!', {
                     position: "bottom-center",
                     autoClose: 2000,
                     hideProgressBar: false,
@@ -37,9 +37,9 @@ export const CartContext=createContext({cartList: [], totalCount:0, totalPrice:0
             notifyAdded()
         } else {
             const notifyNoAdded = () => {
-                toast.error('No se agrega, este producto ya estaba en su carrito!', {
+                toast.error(`Ya se encontraba en su carrito, intente con otro producto!`, {
                     position: "bottom-center",
-                    autoClose: 2500,
+                    autoClose: 3000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -50,7 +50,6 @@ export const CartContext=createContext({cartList: [], totalCount:0, totalPrice:0
             };
             notifyNoAdded()
         }  
-        //implementa la funcionalidad para agregar un producto al carrito
     }
     const isInCart = (id) => {
         return cartList.some(prod => prod.id === id)
@@ -58,13 +57,11 @@ export const CartContext=createContext({cartList: [], totalCount:0, totalPrice:0
 
     const removeList = () => {	
         setCartList([]) 
-        //implementa la funcionalidad para dejar el carrito vacío
     }
 
     const deleteItem = (id) => {	
         const cartWithoutProduct = cartList.filter(prod => prod.id !== id)
         setCartList(cartWithoutProduct)
-        //implementa la funcionalidad para borrar un producto del carrito
     }
 
     const getQuantity = () => {

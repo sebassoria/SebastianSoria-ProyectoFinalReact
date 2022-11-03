@@ -15,7 +15,7 @@ function Item({img, name, price, stock, id}) {
           <p className="card-text">
             <b>Precio unitario: </b>${price}
           </p>
-          <p>Stock: {stock}</p>
+          {stock > 0?<p>Stock: {stock}</p>: <p>Sin stock</p>}
           <Link to={`/detail/${id}`} className="btn btn-dark btn-detail">
             Ver detalle de compra
           </Link>

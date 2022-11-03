@@ -6,8 +6,6 @@ import {CartContext} from '../../context/CartContext'
 import { useNavigate } from 'react-router-dom';
 
 
-
-
 function ItemDetail({id,img, name, varietal, stock, description, price}) {
   const navigate=useNavigate()
 
@@ -46,11 +44,12 @@ function ItemDetail({id,img, name, varietal, stock, description, price}) {
           <p className="item-description">{description}</p>
           <hr />
           <div className="counter-cont">
-            {finish ? (
+            {finish ? 
               <ReturnFinish />
-            ) : (
-              <ItemCount stock={Number(stock)} onAdd={handleOnAdd} />
-            )}
+             : 
+               stock > 0 ? <ItemCount stock={Number(stock)} onAdd={handleOnAdd} />
+               : <h5 className='text-center pb-4'>No tenemos stock de este producto</h5>
+            }
           </div>
           <div className='text-center'>
             <button className='btn btn-back' onClick={() => navigate(-1)}>Volver</button>

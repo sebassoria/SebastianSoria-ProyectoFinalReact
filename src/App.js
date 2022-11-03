@@ -9,8 +9,6 @@ import CartContextProvider from './context/CartContext'
 import Checkout from './components/Checkout/Checkout'
 
 
-
-
 function App() {
 
   return (
@@ -30,8 +28,7 @@ function App() {
        </BrowserRouter>
       </CartContextProvider>
      </div>
-
-   
+  
   );
 }
 

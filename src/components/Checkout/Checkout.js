@@ -1,5 +1,4 @@
 
-// import FormCheckout from '../FormCheckout/FormCheckout'
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import './Checkout.css'
@@ -31,120 +30,141 @@ function Checkout() {
     const sendOrder =async(e)=>{
          e.preventDefault()
         setLoading(true)
+        try {
+            const order={
+                buyer:{
+                    name: inputName,
+                    lastName: inputLastName,
+                    phone: inputPhone,
+                    email: inputMail
+                },
+                totalPrice,
+                Item: cartList,
+                time: serverTimestamp()
+            }
+            const batch = writeBatch(db)
 
-        const order={
-            buyer:{
-                name: inputName,
-                lastName: inputLastName,
-                phone: inputPhone,
-                email: inputMail
-            },
-            totalPrice,
-            Item: cartList,
-            time:serverTimestamp()
+            const outOfStock = []
+
+            const ids= cartList.map(prod=>prod.id)
+            const productsRef=collection(db, 'products')
+            const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)))
+            //Seba..esta linea de arriba me costo entenderla de entrada pero vi hasta comprender
+            const { docs } = productsAddedFromFirestore
+
+            docs.forEach(doc => {
+                const dataDoc = doc.data()
+                const stockDb = dataDoc.stock
+
+                const productAddedToCart = cartList.find(prod => prod.id === doc.id)
+                const prodQuantity = productAddedToCart?.count
+
+                if(stockDb >= prodQuantity) {
+                    batch.update(doc.ref, { stock: stockDb - prodQuantity })
+                } else {
+                    outOfStock.push({ id: doc.id, ...dataDoc})
+                }
+            })
+
+            if(outOfStock.length === 0) {
+                
+                if(inputName===''|| inputLastName===''|| inputPhone===''|| inputMail===''|| inputMail2===''){
+                    MySwal.fire({
+                        icon: 'error',
+                        title: 'Falto algun dato',
+                        text: 'No olvide completar todos los campos!',
+                        showConfirmButton: false,
+                        timer: 2500
+                    })
+                    setLoading(false)
+
+                }else if(inputMail!==inputMail2){
+                    MySwal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Los emails no coinciden',
+                        showConfirmButton: false,
+                        timer: 2500
+                    })
+                    setLoading(false)
+
+                }else{
+                    
+                await batch.commit()
+
+                const ordersCollection = collection(db, 'orders')
+                const docRef = await addDoc(ordersCollection, order);
+                console.log("Document written with ID: ", docRef.id);
+
+                removeList()
+
+                navigate('/')
+
+                MySwal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: 'Su orden fue creada con éxito',
+                        text:`Código de referencia: ${docRef.id}`,
+                        showConfirmButton: true,
+                        }) 
+                }
+            } else {
+                MySwal.fire({
+                    icon: 'error',
+                    title: 'Lo sentimos',
+                    text: 'Producto fuera de stock',
+                    showConfirmButton: false,
+                    timer: 2500
+                })
+            }
+        } catch (error) {
+            console.log(error)
+        } finally {
+            setLoading(false)
         }
-
-        if(inputName===''|| inputLastName===''|| inputPhone===''|| inputMail===''|| inputMail2===''){
-            console.log('datos faltantes')
-            MySwal.fire({
-                icon: 'error',
-                title: 'Falto algun dato',
-                text: 'No olvide completar todos los campos!',
-                showConfirmButton: false,
-                timer: 2500
-              })
-            setLoading(false)
-        }else if(inputMail!==inputMail2){
-            console.log('no es el mismo mail')
-            MySwal.fire({
-                icon: 'error',
-                title: 'Error',
-                text: 'Los emails no coinciden',
-                showConfirmButton: false,
-                timer: 2500
-              })
-            setLoading(false)
-        }else{
-
-        const ordersCollection = collection(db, 'orders')
-        const docRef = await addDoc(ordersCollection, order);
-          console.log("Document written with ID: ", docRef.id);
-
-        removeList()
-
-        navigate('/')
-
-        MySwal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Su orden fue creada con éxito',
-                text:`Código de referencia: ${docRef.id}`,
-                showConfirmButton: true,
-                }) 
-
-        console.log(order)
     }
-}
 
-  if(loading){
-    return <Loader />
-  }
+    if(loading){
+        return <Loader />
+    }
 
-
-  return (
-    <div className="container checkout-container">
-    <div className='text-end'>
-        <button className='btn btn-back' onClick={() => goBack(-1)}>Volver</button>
-    </div>
-    <h1 className='text-center'>Completa tus datos</h1>
-    <form >
-        <div className="mb-3 w-50 mx-auto">
-            <label htmlFor="formGroupExampleInput" className="form-label">Nombre</label>
-            <input value={inputName} onChange={(e)=>setInputName(e.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="Nombre"/>
-        </div>
-
-        <div className="mb-3 w-50 mx-auto">
-            <label htmlFor="formGroupExampleInput" className="form-label">Apellido</label>
-            <input value={inputLastName} onChange={(e)=>setInputLastName(e.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="Apellido"/>
-        </div>
-        
-        <div className="mb-3 w-50 mx-auto">
-            <label htmlFor="formGroupExampleInput" className="form-label">Numero de teléfono</label>
-            <input value={inputPhone} onChange={(e)=>setInputPhone(e.target.value)} type="number" className="form-control" id="formGroupExampleInput" placeholder="Numero de teléfono"/>
-        </div>
-
-        <div className="mb-3 w-50 mx-auto">               
-            <label htmlFor="exampleInputEmail1" className="form-label">Email</label>
-            <div className='input-group'>
-                <span className="input-group-text" id="basic-addon1">@</span>
-                <input value={inputMail} onChange={(e)=>setInputMail(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-            </div>
-            
-            <div id="emailHelp" className="form-text">
-                Nunca compartiremos su correo electrónico con nadie más.
-            </div>
-        </div>
-
-        <div className="mb-3 w-50 mx-auto">               
-            <label htmlFor="exampleInputEmail1" className="form-label">Repita su Email</label>
-            <div className='input-group'>
-                <span className="input-group-text" id="basic-addon1">@</span>
-                <input value={inputMail2} onChange={(e)=>setInputMail2(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-            </div>
-            
-            <div id="emailHelp" className="form-text">
-                Nunca compartiremos su correo electrónico con nadie más.
+    return (
+        <div className="container checkout-container">
+            <h1 className='text-center pb-4'>Completa tus datos</h1>
+            <form >
+                <div className="mb-3 w-50 mx-auto">
+                    <input value={inputName} onChange={(e)=>setInputName(e.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="Nombre"/>
+                </div>
+                <div className="mb-3 w-50 mx-auto">
+                    <input value={inputLastName} onChange={(e)=>setInputLastName(e.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="Apellido"/>
+                </div>                
+                <div className="mb-3 w-50 mx-auto">
+                    <input value={inputPhone} onChange={(e)=>setInputPhone(e.target.value)} type="number" className="form-control" id="formGroupExampleInput" placeholder="Numero de teléfono"/>
+                </div>
+                <div className="mb-3 w-50 mx-auto">               
+                    <div className='input-group'>
+                        <span className="input-group-text" id="basic-addon1">@</span>
+                        <input value={inputMail} onChange={(e)=>setInputMail(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Direccion de email"/>
+                    </div>               
+                </div>
+                <div className="mb-3 w-50 mx-auto">               
+                    <div className='input-group'>
+                        <span className="input-group-text" id="basic-addon1">@</span>
+                        <input value={inputMail2} onChange={(e)=>setInputMail2(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Repita direccion de email"/>
+                    </div>                    
+                    <div id="emailHelp" className="form-text">
+                        Nunca compartiremos su correo electrónico con nadie más.
+                    </div>
+                </div>
+                <div className="mb-3 w-50 mx-auto">
+                    <button type="submit" className="btn btn-primary" onClick={sendOrder} >Confirmar compra</button>
+                </div>
+            </form>
+            <div className='text-center'>
+                <button className='btn btn-back' onClick={() => goBack(-1)}>Volver</button>
             </div>
         </div>
-
-        <div className="mb-3 w-50 mx-auto">
-            <button type="submit" className="btn btn-primary" onClick={sendOrder} >Confirmar compra</button>
-        </div>
-    </form>
-    
-</div>
-      // <FormCheckout sendOrder={handleSendOrder}/>
-  );
+    );
 }
 
 export default Checkout

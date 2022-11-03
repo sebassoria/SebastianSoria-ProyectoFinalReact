@@ -1,4 +1,4 @@
-import './ItemDetailContainer.css'
+
 import ItemDetail from '../ItemDetail/ItemDetail'
 import {useState, useEffect} from 'react'
 import Loader from '../Loader/Loader'

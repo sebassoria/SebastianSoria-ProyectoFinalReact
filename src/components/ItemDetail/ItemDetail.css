@@ -71,7 +71,10 @@
 .btn-finish:hover{
     background-color: #212529 !important;
 }
-.btn-back:hover{
+.btn-back{
     background-color: #212529 !important;
     color: #ffffff !important;
+}
+.btn-back:hover{
+    background-color: #8a1538 !important;
 }

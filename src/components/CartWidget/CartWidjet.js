@@ -16,7 +16,6 @@ function CartWidget(){
                 </Link>   
             </div> 
        
-
     );
 
 }

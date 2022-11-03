@@ -11,17 +11,19 @@
 }
 
 .card {
-    
     margin-bottom: 2em;
     text-align: center;
     width: 16.5rem;
 }
-.card:hover{
+
+.card:hover {
     box-shadow: 1px 1px 15px #00000034;
 }
- .btn-detail{
+
+.btn-detail {
     transition: .3s ease-out;
-} 
+}
+
 .btn-detail:hover {
     background-color: #8a1538 !important;
     cursor: pointer;
@@ -43,7 +45,4 @@
 
 .card-body {
     padding-top: 0 !important;
-    /* background-color: #dbdbdb !important; */
 }
-
-

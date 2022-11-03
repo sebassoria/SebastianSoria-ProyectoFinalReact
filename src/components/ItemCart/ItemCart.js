@@ -50,12 +50,12 @@ function ItemCart() {
               ))}
 
               <div className="row footer-cart ">
-                <div className="col-2">
+                <div className="col-4">
                    <Link to='/checkout' className='btn btn-primary'>
                      Continuar compra
                   </Link>
                 </div>
-                <div className="col-6">
+                <div className="col-4 text-end">
                   <button onClick={removeList} className="btn btn-light">
                     vaciar carrito
                   </button>

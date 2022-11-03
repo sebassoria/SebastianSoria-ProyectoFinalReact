@@ -6,8 +6,6 @@ import { CartContext } from '../../context/CartContext'
 import ItemCart from '../ItemCart/ItemCart'
 import './Cart.css'
 
-
-
 function Cart(id){
     const navig=useNavigate()
     const {cartList}=useContext(CartContext)
