@@ -81,8 +81,8 @@ function Checkout() {
                 }else if(inputMail!==inputMail2){
                     MySwal.fire({
                         icon: 'error',
-                        title: 'Error',
-                        text: 'Los emails no coinciden',
+                        title: 'Email incorrecto',
+                        text: 'La dirección de email no coincide',
                         showConfirmButton: false,
                         timer: 2500
                     })
@@ -130,9 +130,10 @@ function Checkout() {
 
     return (
         <div className="container checkout-container">
-            <h1 className='text-center pb-4'>Completa tus datos</h1>
+            <h1 className='text-center'>Completa tus datos</h1>
             <form >
                 <div className="mb-3 w-50 mx-auto">
+                   
                     <input value={inputName} onChange={(e)=>setInputName(e.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="Nombre"/>
                 </div>
                 <div className="mb-3 w-50 mx-auto">
@@ -141,16 +142,16 @@ function Checkout() {
                 <div className="mb-3 w-50 mx-auto">
                     <input value={inputPhone} onChange={(e)=>setInputPhone(e.target.value)} type="number" className="form-control" id="formGroupExampleInput" placeholder="Numero de teléfono"/>
                 </div>
-                <div className="mb-3 w-50 mx-auto">               
+                <div className="mb-3 w-50 mx-auto"> 
                     <div className='input-group'>
                         <span className="input-group-text" id="basic-addon1">@</span>
-                        <input value={inputMail} onChange={(e)=>setInputMail(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Direccion de email"/>
+                        <input type="email" value={inputMail} onChange={(e)=>setInputMail(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"/>
                     </div>               
                 </div>
                 <div className="mb-3 w-50 mx-auto">               
                     <div className='input-group'>
                         <span className="input-group-text" id="basic-addon1">@</span>
-                        <input value={inputMail2} onChange={(e)=>setInputMail2(e.target.value)} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Repita direccion de email"/>
+                        <input type="email" value={inputMail2} onChange={(e)=>setInputMail2(e.target.value)}  className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Repita su dirección de Email"/>
                     </div>                    
                     <div id="emailHelp" className="form-text">
                         Nunca compartiremos su correo electrónico con nadie más.
