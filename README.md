@@ -1,10 +1,10 @@
 <h1>E-commerce - Dos naranjas vinos - React Js</h1>
 <p>Sitio de venta de vinos para proyecto final de curso de React js</p>
 <hr>
-<ul>
-<li>Este proyecto de e-commerce propone la navegacion por una instancia de productos general y 3 pestañas donde se divide en categorias. Luego de ver las distintas cards, se puede ir al detalle y volver del mismo. En el detalle podemos elegir la cantidad segun el stock disponible y agregar al carrito de compras. Luego de esto podemos seguir comprando o ir al carrito.
-En el carrito se muestra el detalle de los productos seleccionados y se pueden elimimar items y vaciar el carrito. Tambien puede continuarse la comra con un boton que nos lleva a un formulario donde generamos una orden enviando todos nuestros datos a firebase y actualizando el stock</li>
-</ul><h2>Libreias o otras herramientas</h2>
+<p>Este proyecto de e-commerce propone la navegacion por una instancia de productos general y 3 pestañas donde se divide en categorias. Luego de ver las distintas cards, se puede ir al detalle y volver del mismo. En el detalle podemos elegir la cantidad segun el stock disponible y agregar al carrito de compras. Luego de esto podemos seguir comprando o ir al carrito.
+En el carrito se muestra el detalle de los productos seleccionados y se pueden elimimar items y vaciar el carrito. Tambien puede continuarse la comra con un boton que nos lleva a un formulario donde generamos una orden enviando todos nuestros datos a firebase y actualizando el stock</p>
+<hr>
+<h2>Herramientas</h2>
 <hr><ul>
 <li>React-router-bootstrap</li>
 <li>bootstrap</li>
@@ -16,10 +16,11 @@ En el carrito se muestra el detalle de los productos seleccionados y se pueden e
 </ul>
 <hr><p>Instalación: <code>npm install</code></p>
 <p>Desplegar servidor: <code>npm start</code></p>
-<p>Visualizar: se abre una nueva pestaña en el navegador en el puerto 3000 o dirígete a <code>http://localhost:3000/</code></p>
+<p>Se ejecuta la aplicacion y dirije a: <code>http://localhost:3000/</code></p>
 <hr>
 <p>Deploy: https://dosnaranjasvinos.vercel.app/</p>
 <p>Clone: https://github.com/sebassoria/SebastianSoria-ProyectoFinalReact</p>
+<hr>
 
 
 
