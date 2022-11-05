@@ -13,16 +13,16 @@ function ItemCart() {
             <div className="cart-container ">
               <h1 className="cart-title">MI CARRITO</h1>
               <div className="row head-cart">
-                <div className="col-6">
+                <div className="col-md-6 col-sm-3">
                   <span>PRODUCTO</span>
                 </div>
-                <div className="col-2 text-center">
+                <div className="col-md-2 col-sm-3 text-center">
                   <span>PRECIO</span>
                 </div>
-                <div className="col-2 text-center">
+                <div className="col-md-2 col-sm-3 text-center">
                   <span>CANTIDAD</span>
                 </div>
-                <div className="col-2 text-center">
+                <div className="col-md-2 col-sm-3 text-center">
                   <span>SUBTOTAL</span>
                 </div>
               </div>
@@ -34,36 +34,36 @@ function ItemCart() {
                       delete
                     </span>
                   </div>
-                  <div className="col-5">
+                  <div className="col-md-5 col-sm-3">
                     <span>{prod.name}</span>
                   </div>
-                  <div className="col-2  text-center">
+                  <div className="col-md-2 col-sm-3  text-center">
                     <span>${prod.price}</span>
                   </div>
-                  <div className="col-2  text-center">
+                  <div className="col-md-2 col-sm-1  text-center">
                     <span>{prod.count}</span>
                   </div>
-                  <div className="col-2  text-center">
+                  <div className="col-md-2 col-sm-3  text-center">
                     <span>${prod.price*prod.count}</span>
                   </div>
                 </div>
               ))}
 
               <div className="row footer-cart ">
-                <div className="col-4">
+                <div className="col-md-4 col-sm-3">
                    <Link to='/checkout' className='btn btn-primary'>
                      Continuar compra
                   </Link>
                 </div>
-                <div className="col-4 text-end">
+                <div className="col-md-4 col-sm-3 text-end">
                   <button onClick={removeList} className="btn btn-light">
                     vaciar carrito
                   </button>
                 </div>
-                <div className="col-2 text-center">
+                <div className="col-md-2 col-sm-3 text-center">
                   <span className='total-price'>Cantidad total: {totalCount}</span>
                 </div>
-                <div className="col-2 text-center">
+                <div className="col-md-2 col-sm-3 text-center">
                   <span className='total-price'>Total: ${totalPrice}</span>
                 </div>
               </div>

@@ -49,7 +49,6 @@ function Checkout() {
             const ids= cartList.map(prod=>prod.id)
             const productsRef=collection(db, 'products')
             const productsAddedFromFirestore = await getDocs(query(productsRef, where(documentId(), 'in', ids)))
-            //Seba..esta linea de arriba me costo entenderla de entrada pero vi hasta comprender
             const { docs } = productsAddedFromFirestore
 
             docs.forEach(doc => {
@@ -132,8 +131,7 @@ function Checkout() {
         <div className="container checkout-container">
             <h1 className='text-center'>Completa tus datos</h1>
             <form >
-                <div className="mb-3 w-50 mx-auto">
-                   
+                <div className="mb-3 w-50 mx-auto"> 
                     <input value={inputName} onChange={(e)=>setInputName(e.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="Nombre"/>
                 </div>
                 <div className="mb-3 w-50 mx-auto">

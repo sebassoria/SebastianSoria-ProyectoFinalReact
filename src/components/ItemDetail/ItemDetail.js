@@ -28,7 +28,8 @@ function ItemDetail({id,img, name, varietal, stock, description, price}) {
  
   
     return (
-      <div className="cont-detail">
+      <div className='detail'>
+        <div className="cont-detail">
         <div className="cont-detail__img">
           <img src={img} alt={name} className="img-detail"></img>
         </div>
@@ -54,8 +55,8 @@ function ItemDetail({id,img, name, varietal, stock, description, price}) {
           <div className='text-center'>
             <button className='btn btn-back' onClick={() => navigate(-1)}>Volver</button>
           </div>
-        </div>
-        
+        </div> 
+      </div>
       </div>
     );
 }

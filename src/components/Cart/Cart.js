@@ -1,5 +1,4 @@
 
-
 import { useContext} from 'react'
 import { Link, useNavigate} from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
@@ -20,6 +19,7 @@ function Cart(id){
             <button className='btn btn-dark' onClick={()=>navig(-1)}>
                 Volver atras
             </button>
+            <p>Vea el detalle del producto que desea y agreguelo a su carrito</p>
         </div>
         )
      }
