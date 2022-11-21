@@ -60,7 +60,8 @@
     }
     
     .cart-container{ 
-        width: 100%;
+        width: 90%;
+        margin: auto;
         margin-top: 5em;
     }
     .btn-checkout{

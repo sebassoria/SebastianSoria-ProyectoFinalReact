@@ -6,3 +6,8 @@
     margin: auto;
     max-width: 1200px;
 }
+@media (max-width: 600px) {
+    .card{
+        width: 80% !important;
+    }
+}

@@ -16,3 +16,8 @@
     max-width: 1180px;
 }
 
+@media (max-width: 768px) {
+    .items-container{
+        padding-top: 2.5em;
+    }
+}

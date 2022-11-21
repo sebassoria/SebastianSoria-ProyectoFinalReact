@@ -131,22 +131,22 @@ function Checkout() {
         <div className="container checkout-container">
             <h1 className='text-center'>Completa tus datos</h1>
             <form >
-                <div className="mb-3 w-50 mx-auto"> 
+                <div className="mb-3 w-50 mx-auto inputs"> 
                     <input value={inputName} onChange={(e)=>setInputName(e.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="Nombre"/>
                 </div>
-                <div className="mb-3 w-50 mx-auto">
+                <div className="mb-3 w-50 mx-auto inputs">
                     <input value={inputLastName} onChange={(e)=>setInputLastName(e.target.value)} type="text" className="form-control" id="formGroupExampleInput" placeholder="Apellido"/>
                 </div>                
-                <div className="mb-3 w-50 mx-auto">
+                <div className="mb-3 w-50 mx-auto inputs">
                     <input value={inputPhone} onChange={(e)=>setInputPhone(e.target.value)} type="number" className="form-control" id="formGroupExampleInput" placeholder="Numero de teléfono"/>
                 </div>
-                <div className="mb-3 w-50 mx-auto"> 
+                <div className="mb-3 w-50 mx-auto inputs"> 
                     <div className='input-group'>
                         <span className="input-group-text" id="basic-addon1">@</span>
                         <input type="email" value={inputMail} onChange={(e)=>setInputMail(e.target.value)} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"/>
                     </div>               
                 </div>
-                <div className="mb-3 w-50 mx-auto">               
+                <div className="mb-3 w-50 mx-auto inputs">               
                     <div className='input-group'>
                         <span className="input-group-text" id="basic-addon1">@</span>
                         <input type="email" value={inputMail2} onChange={(e)=>setInputMail2(e.target.value)}  className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Repita su dirección de Email"/>
@@ -155,8 +155,8 @@ function Checkout() {
                         Nunca compartiremos su correo electrónico con nadie más.
                     </div>
                 </div>
-                <div className="mb-3 w-50 mx-auto">
-                    <button type="submit" className="btn btn-primary" onClick={sendOrder} >Confirmar compra</button>
+                <div className="mb-3 w-50 mx-auto inputs confirm">
+                    <button type="submit" className="btn btn-primary " onClick={sendOrder} >Confirmar compra</button>
                 </div>
             </form>
             <div className='text-center'>

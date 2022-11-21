@@ -5,3 +5,12 @@
 .checkout-container h1{
     padding-bottom: 1em;
 }
+
+@media (max-width: 768px) {
+    form .inputs{
+        width: 90% !important;
+    }
+    .confirm{
+        text-align: center;
+    }
+}

@@ -8,3 +8,9 @@
 .no-products .btn{
     margin:3em;
 }
+
+@media (max-width: 768px) {
+    .no-products .btn{
+        margin-top:1.5em;
+    }
+}
