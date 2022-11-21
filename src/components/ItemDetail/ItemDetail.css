@@ -1,6 +1,5 @@
 .detail{
-    /* background-color: #eeeee5; */
-    padding-bottom: 14em;
+    padding-bottom: 8em;
 }
 .cont-detail {
     width: 80%;
@@ -8,7 +7,7 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: .3em;
-    margin:  3em auto 0 auto;
+    margin:  2em auto 0 auto;
     background-color: #ffffff;
     border-radius: .4em;
     box-shadow: 1px 1px 10px #0000006c;
@@ -17,7 +16,7 @@
 }
 
 .img-detail {
-    width: 18em;
+    width: 16em;
 }
 
 .cont-detail__img {
@@ -81,4 +80,15 @@
 }
 .btn-back:hover{
     background-color: #8a1538 !important;
+}
+
+@media (max-width: 600px) {
+    .cont-detail {
+        width: 100%;
+        padding: 0;
+        margin-top:  5em;
+    }
+    .img-detail {
+        width: 12em;
+    }
 }

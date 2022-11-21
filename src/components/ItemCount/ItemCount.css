@@ -1,8 +1,8 @@
 .cont-counter{
     display: flex;
-    justify-content: space-evenly;
-    
+    justify-content: space-evenly; 
     margin-bottom: 2em;
+    flex-wrap: wrap;
 }
 .counter{
     text-align: center;
@@ -15,6 +15,7 @@
 .counter button{
     width: 2.3em;
     height: 2.3em;
+    border-radius: 50% !important;
 }
 .num-count{
     font-size: 1.7em;
@@ -28,4 +29,12 @@
 }
 .add-cart button:hover{
     background-color: #212529 !important;
+}
+
+
+@media (max-width: 600px) {
+    .add-cart{
+        margin: 1em ;
+    }
+
 }

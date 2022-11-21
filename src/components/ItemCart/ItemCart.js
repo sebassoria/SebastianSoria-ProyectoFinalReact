@@ -28,34 +28,34 @@ function ItemCart() {
               </div>
 
               {cartList.map((prod) => (
-                <div key={prod.id} className="row body-cart ">
-                  <div className="col-1">
+                <div key={prod.id} className="row body-cart">
+                  <div className="col-md-1 col-sm-1 text-center">
                     <span className="material-symbols-outlined" onClick={()=>deleteItem(prod.id)}>
                       delete
                     </span>
                   </div>
-                  <div className="col-md-5 col-sm-3">
+                  <div className="col-md-5 col-sm-11 prod-name">
                     <span>{prod.name}</span>
                   </div>
-                  <div className="col-md-2 col-sm-3  text-center">
+                  <div className="col-md-2 col-sm-4 text-center">
                     <span>${prod.price}</span>
                   </div>
-                  <div className="col-md-2 col-sm-1  text-center">
+                  <div className="col-md-2 col-sm-4 text-center">
                     <span>{prod.count}</span>
                   </div>
-                  <div className="col-md-2 col-sm-3  text-center">
+                  <div className="col-md-2 col-sm-4 text-center">
                     <span>${prod.price*prod.count}</span>
                   </div>
                 </div>
               ))}
 
               <div className="row footer-cart ">
-                <div className="col-md-4 col-sm-3">
+                <div className="col-md-4 col-sm-6 btn-checkout">
                    <Link to='/checkout' className='btn btn-primary'>
                      Continuar compra
                   </Link>
                 </div>
-                <div className="col-md-4 col-sm-3 text-end">
+                <div className="col-md-4 col-sm-6  btn-clean">
                   <button onClick={removeList} className="btn btn-light">
                     vaciar carrito
                   </button>

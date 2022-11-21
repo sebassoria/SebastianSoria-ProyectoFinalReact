@@ -3,5 +3,8 @@
   padding-top: 5em;
 }
 body{
-  background-color: #eeeee5;
+  background-color: #eeeee5 !important;
+  position: relative;
+  padding-bottom: 3em;
+  min-height: 100vh;
 }
